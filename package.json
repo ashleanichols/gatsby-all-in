@@ -1,0 +1,98 @@
+{
+  "name": "gatsby-all-in",
+  "description": "A all-in starter for Gatsby",
+  "version": "0.1.0",
+  "license": "MIT",
+  "author": {
+		"name": "Gherciu Gheorghe",
+		"email": "gherciu553@gmail.com",
+		"url": "https://gherciu.github.io/portfolio/"
+	},
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Gherciu/gatsby-all-in"
+  },
+  "bugs": {
+    "url": "https://github.com/Gherciu/gatsby-all-in/issues"
+  },
+  "scripts": {
+    "build": "gatsby build",
+    "start": "gatsby develop",
+    "serve": "gatsby serve",
+    "lint:scripts": "eslint ./ --max-warnings=0",
+    "fix:scripts": "eslint ./ --fix --max-warnings=0",
+    "lint:styles": "stylelint \"./src/**/*.scss\" --syntax=scss",
+    "fix:styles": "stylelint \"./src/**/*.scss\" --fix --syntax=scss",
+    "clean:install": "rimraf node_modules && rimraf package-lock.json && npm i"
+  },
+  "lint-staged": {
+    "*.(js|jsx)": [
+      "npm run lint:scripts",
+      "git add"
+    ],
+    "*.(css|scss)": [
+      "npm run lint:styles",
+      "git add"
+    ]
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged",
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
+    }
+  },
+  "dependencies": {
+    "antd": "^3.20.1",
+    "bourbon": "^6.0.0",
+    "classnames": "^2.2.6",
+    "gatsby": "^2.13.18",
+    "lodash": "^4.17.11",
+    "moment": "^2.24.0",
+    "prop-types": "^15.7.2",
+    "ramda": "^0.26.1",
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6",
+    "react-helmet": "^5.2.1",
+    "react-redux": "^7.1.0",
+    "redux": "^4.0.1",
+    "redux-devtools-extension": "^2.13.8",
+    "tailwindcss": "^1.0.4",
+    "yup": "^0.27.0"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^8.2.0",
+    "@commitlint/config-conventional": "^8.2.0",
+    "@svgr/webpack": "^4.3.1",
+    "babel-eslint": "^10.0.2",
+    "dotenv": "^8.0.0",
+    "eslint": "^6.0.1",
+    "eslint-config-airbnb": "^17.1.1",
+    "eslint-config-airbnb-base": "^13.2.0",
+    "eslint-config-prettier": "^6.0.0",
+    "eslint-import-resolver-alias": "^1.1.2",
+    "eslint-plugin-import": "^2.18.0",
+    "eslint-plugin-jsx-a11y": "^6.2.3",
+    "eslint-plugin-prettier": "^3.1.0",
+    "eslint-plugin-react": "^7.14.2",
+    "eslint-plugin-react-hooks": "^1.6.1",
+    "gatsby-plugin-alias-imports": "^1.0.5",
+    "gatsby-plugin-less": "^2.1.2",
+    "gatsby-plugin-manifest": "^2.2.3",
+    "gatsby-plugin-playground": "^1.0.6",
+    "gatsby-plugin-postcss": "^2.1.2",
+    "gatsby-plugin-react-helmet": "^3.1.0",
+    "gatsby-plugin-sass": "^2.1.0",
+    "gatsby-plugin-svgr": "^2.0.2",
+    "husky": "^3.0.0",
+    "less": "^3.9.0",
+    "lint-staged": "^9.2.0",
+    "node-sass": "^4.12.0",
+    "prettier": "^1.18.2",
+    "rimraf": "^2.6.3",
+    "stylelint": "^10.1.0",
+    "stylelint-config-prettier": "^5.2.0",
+    "stylelint-config-recommended": "^2.2.0",
+    "stylelint-prettier": "^1.1.1",
+    "stylelint-scss": "^3.9.0"
+  }
+}
